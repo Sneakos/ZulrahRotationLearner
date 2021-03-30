@@ -302,6 +302,8 @@ namespace ZulrahLearner
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 LoadFromJson(File.ReadAllText(openFileDialog.FileName));
+
+                _LastIndex = 0;
             }
 
             if (Phases.Count > 0)

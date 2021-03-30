@@ -44,8 +44,8 @@ namespace ZulrahLearner
             this.lblTimeLeft = new System.Windows.Forms.Label();
             this.lblRotation = new System.Windows.Forms.Label();
             this.pbZulrah = new System.Windows.Forms.PictureBox();
-            this.lblStats = new System.Windows.Forms.Label();
-            this.Stats = new System.Windows.Forms.Label();
+            this.lblScore = new System.Windows.Forms.Label();
+            this.Score = new System.Windows.Forms.Label();
             this.pbZulrahShrine = new System.Windows.Forms.PictureBox();
             this.cbJadPhase = new System.Windows.Forms.CheckBox();
             this.cmbPhase = new System.Windows.Forms.ComboBox();
@@ -195,25 +195,25 @@ namespace ZulrahLearner
             this.pbZulrah.TabStop = false;
             this.pbZulrah.Click += new System.EventHandler(this.pbZulrah_Click);
             // 
-            // lblStats
+            // lblScore
             // 
-            this.lblStats.AutoSize = true;
-            this.lblStats.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblStats.Location = new System.Drawing.Point(742, 546);
-            this.lblStats.Name = "lblStats";
-            this.lblStats.Size = new System.Drawing.Size(66, 28);
-            this.lblStats.TabIndex = 11;
-            this.lblStats.Text = " 0  /  0";
+            this.lblScore.AutoSize = true;
+            this.lblScore.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblScore.Location = new System.Drawing.Point(566, 517);
+            this.lblScore.Name = "lblScore";
+            this.lblScore.Size = new System.Drawing.Size(66, 28);
+            this.lblScore.TabIndex = 11;
+            this.lblScore.Text = " 0  /  0";
             // 
-            // Stats
+            // Score
             // 
-            this.Stats.AutoSize = true;
-            this.Stats.Font = new System.Drawing.Font("Palatino Linotype", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Stats.Location = new System.Drawing.Point(752, 520);
-            this.Stats.Name = "Stats";
-            this.Stats.Size = new System.Drawing.Size(51, 26);
-            this.Stats.TabIndex = 12;
-            this.Stats.Text = "Stats";
+            this.Score.AutoSize = true;
+            this.Score.Font = new System.Drawing.Font("Palatino Linotype", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Score.Location = new System.Drawing.Point(504, 517);
+            this.Score.Name = "Score";
+            this.Score.Size = new System.Drawing.Size(56, 26);
+            this.Score.TabIndex = 12;
+            this.Score.Text = "Score";
             // 
             // pbZulrahShrine
             // 
@@ -248,7 +248,7 @@ namespace ZulrahLearner
             "      Rotation C",
             "      Rotation D",
             "      Random"});
-            this.cmbPhase.Location = new System.Drawing.Point(3, 527);
+            this.cmbPhase.Location = new System.Drawing.Point(6, 524);
             this.cmbPhase.Name = "cmbPhase";
             this.cmbPhase.Size = new System.Drawing.Size(156, 34);
             this.cmbPhase.TabIndex = 16;
@@ -257,7 +257,7 @@ namespace ZulrahLearner
             // 
             this.btnStart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnStart.Font = new System.Drawing.Font("Palatino Linotype", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnStart.Location = new System.Drawing.Point(461, 528);
+            this.btnStart.Location = new System.Drawing.Point(700, 525);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(79, 34);
             this.btnStart.TabIndex = 17;
@@ -269,7 +269,7 @@ namespace ZulrahLearner
             // 
             this.btnStop.BackColor = System.Drawing.Color.Red;
             this.btnStop.Font = new System.Drawing.Font("Palatino Linotype", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnStop.Location = new System.Drawing.Point(546, 528);
+            this.btnStop.Location = new System.Drawing.Point(785, 525);
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(76, 34);
             this.btnStop.TabIndex = 18;
@@ -281,7 +281,7 @@ namespace ZulrahLearner
             // 
             this.cbLoop.AutoSize = true;
             this.cbLoop.Font = new System.Drawing.Font("Palatino Linotype", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cbLoop.Location = new System.Drawing.Point(178, 532);
+            this.cbLoop.Location = new System.Drawing.Point(178, 528);
             this.cbLoop.Name = "cbLoop";
             this.cbLoop.Size = new System.Drawing.Size(74, 30);
             this.cbLoop.TabIndex = 19;
@@ -292,7 +292,7 @@ namespace ZulrahLearner
             // 
             this.cbHideRotationInfo.AutoSize = true;
             this.cbHideRotationInfo.Font = new System.Drawing.Font("Palatino Linotype", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cbHideRotationInfo.Location = new System.Drawing.Point(258, 532);
+            this.cbHideRotationInfo.Location = new System.Drawing.Point(258, 528);
             this.cbHideRotationInfo.Name = "cbHideRotationInfo";
             this.cbHideRotationInfo.Size = new System.Drawing.Size(147, 30);
             this.cbHideRotationInfo.TabIndex = 20;
@@ -304,15 +304,15 @@ namespace ZulrahLearner
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(917, 584);
+            this.ClientSize = new System.Drawing.Size(917, 571);
             this.Controls.Add(this.cbHideRotationInfo);
             this.Controls.Add(this.cbLoop);
             this.Controls.Add(this.btnStop);
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.cmbPhase);
             this.Controls.Add(this.cbJadPhase);
-            this.Controls.Add(this.Stats);
-            this.Controls.Add(this.lblStats);
+            this.Controls.Add(this.Score);
+            this.Controls.Add(this.lblScore);
             this.Controls.Add(this.pbZulrah);
             this.Controls.Add(this.lblRotation);
             this.Controls.Add(this.lblTimeLeft);
@@ -356,8 +356,8 @@ namespace ZulrahLearner
         private System.Windows.Forms.Label lblTimeLeft;
         private System.Windows.Forms.Label lblRotation;
         private System.Windows.Forms.PictureBox pbZulrah;
-        private System.Windows.Forms.Label lblStats;
-        private System.Windows.Forms.Label Stats;
+        private System.Windows.Forms.Label lblScore;
+        private System.Windows.Forms.Label Score;
         private System.Windows.Forms.PictureBox pbZulrahShrine;
         private System.Windows.Forms.CheckBox cbJadPhase;
         private System.Windows.Forms.ComboBox cmbPhase;

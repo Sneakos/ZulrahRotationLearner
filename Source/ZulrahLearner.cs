@@ -11,13 +11,13 @@ namespace ZulrahLearner
     {
         #region Constants
 
-        //private const int PhaseSpeed = 1;
-        //private const int PhaseStepSpeed = 1;
-        //private const int NextPhaseSpeed = 1;
+        private const int PhaseSpeed = 100;
+        private const int PhaseStepSpeed = 100;
+        private const int NextPhaseSpeed = 1;
 
-        private const int PhaseSpeed = 6;
-        private const int NextPhaseSpeed = 3;
-        private const int PhaseStepSpeed = 4;
+       // private const int PhaseSpeed = 6;
+       // private const int NextPhaseSpeed = 3;
+       // private const int PhaseStepSpeed = 4;
 
         #endregion Constants
 
@@ -259,12 +259,7 @@ namespace ZulrahLearner
                 GameState.IncorrectCount++;
             }
 
-            int totalCount = GameState.CorrectCount + GameState.IncorrectCount;
-
-            string spaceCorrect = GameState.CorrectCount > 9 ? " " : "";
-            string spaceTotal = totalCount > 9 ? " " : "";
-
-            lblStats.Text = spaceCorrect + GameState.CorrectCount + " / " + spaceTotal + totalCount;
+            SetScoreLabel();
 
             cbJadPhase.Checked = false;
 
@@ -288,6 +283,16 @@ namespace ZulrahLearner
             {
                 PreNextPhase();
             }
+        }
+
+        private void SetScoreLabel()
+        {
+            int totalCount = GameState.CorrectCount + GameState.IncorrectCount;
+
+            string spaceCorrect = GameState.CorrectCount > 9 ? " " : "";
+            string spaceTotal = totalCount > 9 ? " " : "";
+
+            lblScore.Text = spaceCorrect + GameState.CorrectCount + " / " + spaceTotal + totalCount;
         }
 
         private void PreNextPhase()
@@ -608,13 +613,39 @@ namespace ZulrahLearner
 
         private void btnStart_Click(object sender, EventArgs e)
         {
+            if (PhaseTimer.Enabled)
+                PhaseTimer.Stop();
+
+            ResetGame();
+
+            StartTimer();
+        }
+
+        private void ResetGame()
+        {
             SetRotation();
 
             InitializeGameState();
 
             SetZulrahImage();
 
-            StartTimer();
+            btnStart.Text = "Restart";
+
+            pbMage.Image = Images.MagePrayerOff.Resize(pbMage.Size);
+            pbRange.Image = Images.RangePrayerOff.Resize(pbRange.Size);
+            pbMelee.Image = Images.MeleePrayerOff.Resize(pbMelee.Size);
+
+            pbHelm.Image = Images.RangeHelm.Resize(pbHelm.Size);
+            pbWeapon.Image = Images.Crossbow.Resize(pbWeapon.Size);
+
+            loadingBar.BackColor = Color.FromArgb(46, 252, 56);
+            PhaseTimer.Tick -= PhaseTimer_TickDown;
+            PhaseTimer.Tick -= PhaseTimer_TickUp;
+            PhaseTimer.Tick += PhaseTimer_TickUp;
+
+            SetScoreLabel();
+
+            Refresh();
         }
 
         #endregion Other Click Events
